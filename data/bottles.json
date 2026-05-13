@@ -1,0 +1,134 @@
+[
+  {
+    "id": "vega-sicilia-unico-2010",
+    "name": "Vega Sicilia Único",
+    "year": 2010,
+    "region": "Ribera del Duero",
+    "varietal": "Tempranillo, Cabernet Sauvignon",
+    "producer": "Bodegas Vega Sicilia",
+    "position": { "rack": "A", "row": 1, "col": 1 },
+    "notes": "Joya de la bodega. Reservar para celebración familiar grande. Decantar 2 horas.",
+    "drinkBy": "2040-12-31"
+  },
+  {
+    "id": "lopez-heredia-tondonia-gran-reserva-2010",
+    "name": "Viña Tondonia Gran Reserva",
+    "year": 2010,
+    "region": "Rioja Alta",
+    "varietal": "Tempranillo, Garnacha, Graciano, Mazuelo",
+    "producer": "R. López de Heredia",
+    "position": { "rack": "A", "row": 1, "col": 2 },
+    "notes": "Clásico tradicional, paso largo por barrica. Va de maravilla con cordero asado.",
+    "drinkBy": "2045-06-30"
+  },
+  {
+    "id": "marques-de-murrieta-castillo-ygay-2012",
+    "name": "Castillo Ygay Gran Reserva Especial",
+    "year": 2012,
+    "region": "Rioja Alta",
+    "varietal": "Tempranillo, Mazuelo",
+    "producer": "Marqués de Murrieta",
+    "position": { "rack": "A", "row": 1, "col": 3 },
+    "notes": "Aromas de tabaco y cuero. Beber con calma, una noche larga.",
+    "drinkBy": "2038-12-31"
+  },
+  {
+    "id": "pingus-2018",
+    "name": "Pingus",
+    "year": 2018,
+    "region": "Ribera del Duero",
+    "varietal": "Tinto Fino",
+    "producer": "Dominio de Pingus",
+    "position": { "rack": "A", "row": 2, "col": 1 },
+    "notes": "Culto. Producción mínima de viñas viejas. Guardar al menos 5 años más.",
+    "drinkBy": "2042-12-31"
+  },
+  {
+    "id": "remelluri-reserva-2016",
+    "name": "Remelluri Reserva",
+    "year": 2016,
+    "region": "Rioja Alavesa",
+    "varietal": "Tempranillo, Garnacha, Graciano",
+    "producer": "La Granja Nuestra Señora de Remelluri",
+    "position": { "rack": "A", "row": 2, "col": 2 },
+    "notes": "Equilibrado y elegante. Perfecto con setas de temporada.",
+    "drinkBy": "2032-12-31"
+  },
+  {
+    "id": "alion-2019",
+    "name": "Alión",
+    "year": 2019,
+    "region": "Ribera del Duero",
+    "varietal": "Tempranillo",
+    "producer": "Bodegas y Viñedos Alión",
+    "position": { "rack": "A", "row": 2, "col": 3 },
+    "notes": "Hermano moderno de Vega Sicilia. Buena potencia y fruta nítida.",
+    "drinkBy": "2035-12-31"
+  },
+  {
+    "id": "muga-prado-enea-2015",
+    "name": "Prado Enea Gran Reserva",
+    "year": 2015,
+    "region": "Rioja Alta",
+    "varietal": "Tempranillo, Garnacha, Mazuelo, Graciano",
+    "producer": "Bodegas Muga",
+    "position": { "rack": "B", "row": 1, "col": 1 },
+    "notes": "Crianza extensa en roble. Aromas de especia y vainilla.",
+    "drinkBy": "2035-06-30"
+  },
+  {
+    "id": "cvne-imperial-gran-reserva-2015",
+    "name": "Imperial Gran Reserva",
+    "year": 2015,
+    "region": "Rioja Alta",
+    "varietal": "Tempranillo, Graciano, Mazuelo",
+    "producer": "CVNE",
+    "position": { "rack": "B", "row": 1, "col": 2 },
+    "notes": "Premiado por Wine Spectator. Reservar para visitas importantes.",
+    "drinkBy": "2034-12-31"
+  },
+  {
+    "id": "aalto-ps-2019",
+    "name": "Aalto PS",
+    "year": 2019,
+    "region": "Ribera del Duero",
+    "varietal": "Tempranillo",
+    "producer": "Aalto Bodegas y Viñedos",
+    "position": { "rack": "B", "row": 1, "col": 3 },
+    "notes": "Pago Seleccionado. Concentrado, intenso, mejor decantado.",
+    "drinkBy": "2036-12-31"
+  },
+  {
+    "id": "artadi-vina-el-pison-2018",
+    "name": "Viña El Pisón",
+    "year": 2018,
+    "region": "Rioja Alavesa",
+    "varietal": "Tempranillo",
+    "producer": "Artadi",
+    "position": { "rack": "B", "row": 2, "col": 1 },
+    "notes": "Viñedo singular. Mineral y muy puro. Una experiencia.",
+    "drinkBy": "2040-12-31"
+  },
+  {
+    "id": "contino-vina-del-olivo-2017",
+    "name": "Contino Viña del Olivo",
+    "year": 2017,
+    "region": "Rioja Alavesa",
+    "varietal": "Tempranillo, Graciano",
+    "producer": "CVNE - Viñedos del Contino",
+    "position": { "rack": "B", "row": 2, "col": 2 },
+    "notes": "De pago. Carácter y elegancia. Acompañar con caza menor.",
+    "drinkBy": "2033-12-31"
+  },
+  {
+    "id": "abadia-retuerta-pago-negralada-2017",
+    "name": "Pago Negralada",
+    "year": 2017,
+    "region": "Sardón del Duero",
+    "varietal": "Tempranillo",
+    "producer": "Abadía Retuerta",
+    "position": { "rack": "B", "row": 2, "col": 3 },
+    "notes": "Aunque está fuera de la DO, calidad de pago. Muy abuelo lo disfruta.",
+    "drinkBy": "2034-06-30"
+  }
+]
