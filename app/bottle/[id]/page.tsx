@@ -84,30 +84,45 @@ export default async function BottleDetailPage({ params }: Props) {
 
         <div className="rack-frame rounded-2xl p-6 space-y-3">
           <h2 className="font-display text-xl text-wood-100">Ubicación</h2>
-          <div className="flex items-center gap-4">
-            <div className="bottle-slot bottle-slot--filled flex h-24 w-24 flex-col items-center justify-center rounded-lg">
-              <span className="text-xs uppercase tracking-widest text-wood-200/70">
-                Estante
-              </span>
-              <span className="font-display text-3xl text-wine-100">
-                {bottle.position.rack}
-              </span>
+          {bottle.position ? (
+            <div className="flex items-center gap-4">
+              <div className="bottle-slot bottle-slot--filled flex h-24 w-24 flex-col items-center justify-center rounded-lg">
+                <span className="text-xs uppercase tracking-widest text-wood-200/70">
+                  Estante
+                </span>
+                <span className="font-display text-3xl text-wine-100">
+                  {bottle.position.rack}
+                </span>
+              </div>
+              <div className="space-y-1 text-sm text-wood-200/80">
+                <div>
+                  Fila:{" "}
+                  <strong className="text-wine-100">
+                    {bottle.position.row}
+                  </strong>
+                </div>
+                <div>
+                  Columna:{" "}
+                  <strong className="text-wine-100">
+                    {bottle.position.col}
+                  </strong>
+                </div>
+                <div className="text-xs text-wood-200/60">
+                  Código: {bottle.position.rack}-{bottle.position.row}-
+                  {bottle.position.col}
+                </div>
+              </div>
             </div>
-            <div className="space-y-1 text-sm text-wood-200/80">
-              <div>
-                Fila:{" "}
-                <strong className="text-wine-100">{bottle.position.row}</strong>
-              </div>
-              <div>
-                Columna:{" "}
-                <strong className="text-wine-100">{bottle.position.col}</strong>
-              </div>
-              <div className="text-xs text-wood-200/60">
-                Código: {bottle.position.rack}-{bottle.position.row}-
-                {bottle.position.col}
-              </div>
+          ) : (
+            <div className="space-y-3">
+              <p className="text-sm text-wood-200/80">
+                Esta botella todavía no tiene un hueco asignado en la bodega.
+              </p>
+              <Link href="/organizar" className="btn-ghost inline-block">
+                Asignarle un hueco
+              </Link>
             </div>
-          </div>
+          )}
         </div>
       </section>
 

@@ -25,6 +25,9 @@ export default function RootLayout({
               <Link href="/" className="btn-ghost">
                 Bodega
               </Link>
+              <Link href="/importar" className="btn-ghost">
+                Importar CSV
+              </Link>
               <Link href="/add-bottle" className="btn-primary">
                 Añadir botella
               </Link>

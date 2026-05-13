@@ -7,11 +7,15 @@ interface Props {
 }
 
 export default function RackGrid({ rack, bottles }: Props) {
-  const maxRow = Math.max(2, ...bottles.map((b) => b.position.row));
-  const maxCol = Math.max(3, ...bottles.map((b) => b.position.col));
+  const placed = bottles.filter(
+    (b): b is Bottle & { position: NonNullable<Bottle["position"]> } =>
+      b.position !== null,
+  );
+  const maxRow = Math.max(2, ...placed.map((b) => b.position.row));
+  const maxCol = Math.max(3, ...placed.map((b) => b.position.col));
 
   const slotAt = (row: number, col: number) =>
-    bottles.find((b) => b.position.row === row && b.position.col === col);
+    placed.find((b) => b.position.row === row && b.position.col === col);
 
   const rows = Array.from({ length: maxRow }, (_, i) => i + 1);
   const cols = Array.from({ length: maxCol }, (_, i) => i + 1);

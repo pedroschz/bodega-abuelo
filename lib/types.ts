@@ -11,7 +11,7 @@ export interface Bottle {
   region: string;
   varietal: string;
   producer: string;
-  position: BottlePosition;
+  position: BottlePosition | null;
   notes: string;
   drinkBy: string;
 }
