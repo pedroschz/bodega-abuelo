@@ -1,14 +1,12 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getBottleById, getBottles } from "@/lib/bottles";
+import { getBottle } from "@/lib/db";
 
 interface Props {
   params: { id: string };
 }
 
-export function generateStaticParams() {
-  return getBottles().map((b) => ({ id: b.id }));
-}
+export const dynamic = "force-dynamic";
 
 function formatDate(iso: string): string {
   try {
@@ -22,8 +20,8 @@ function formatDate(iso: string): string {
   }
 }
 
-export default function BottleDetailPage({ params }: Props) {
-  const bottle = getBottleById(params.id);
+export default async function BottleDetailPage({ params }: Props) {
+  const bottle = await getBottle(params.id);
   if (!bottle) notFound();
 
   const drinkByYear = new Date(bottle.drinkBy).getFullYear();

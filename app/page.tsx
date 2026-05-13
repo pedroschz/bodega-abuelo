@@ -1,8 +1,11 @@
-import { getBottles, groupByRack } from "@/lib/bottles";
+import { listBottles } from "@/lib/db";
+import { groupByRack } from "@/lib/bottles";
 import RackGrid from "@/components/RackGrid";
 
-export default function HomePage() {
-  const bottles = getBottles();
+export const dynamic = "force-dynamic";
+
+export default async function HomePage() {
+  const bottles = await listBottles();
   const byRack = groupByRack(bottles);
   const rackKeys = Object.keys(byRack).sort();
 

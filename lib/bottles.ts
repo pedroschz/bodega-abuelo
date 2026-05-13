@@ -1,13 +1,4 @@
-import bottlesData from "@/data/bottles.json";
 import type { Bottle } from "./types";
-
-export function getBottles(): Bottle[] {
-  return bottlesData as Bottle[];
-}
-
-export function getBottleById(id: string): Bottle | undefined {
-  return getBottles().find((b) => b.id === id);
-}
 
 export function groupByRack(bottles: Bottle[]): Record<string, Bottle[]> {
   const out: Record<string, Bottle[]> = {};

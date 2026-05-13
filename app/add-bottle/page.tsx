@@ -1,36 +1,51 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function AddBottlePage() {
-  const [submitted, setSubmitted] = useState(false);
+  const router = useRouter();
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
-  };
+    setError(null);
+    setSubmitting(true);
 
-  if (submitted) {
-    return (
-      <div className="rack-frame mx-auto max-w-xl rounded-2xl p-8 text-center space-y-4">
-        <h1 className="font-display text-3xl text-wine-100">
-          ¡Botella registrada!
-        </h1>
-        <p className="text-wood-200/80">
-          Hemos guardado los datos en local. En esta versión inicial la bodega
-          usa <code className="text-wine-300">data/bottles.json</code> como
-          almacenamiento, así que añade la nueva entrada al fichero para que
-          aparezca en la vista de bodega.
-        </p>
-        <button
-          onClick={() => setSubmitted(false)}
-          className="btn-ghost"
-        >
-          Añadir otra
-        </button>
-      </div>
-    );
-  }
+    const form = new FormData(e.currentTarget);
+    const payload = {
+      name: form.get("name"),
+      year: Number(form.get("year")),
+      region: form.get("region"),
+      varietal: form.get("varietal"),
+      producer: form.get("producer"),
+      drinkBy: form.get("drinkBy"),
+      rack: form.get("rack"),
+      row: Number(form.get("row")),
+      col: Number(form.get("col")),
+      notes: form.get("notes") ?? "",
+    };
+
+    try {
+      const res = await fetch("/api/bottles", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) {
+        const data = (await res.json().catch(() => null)) as
+          | { error?: string }
+          | null;
+        throw new Error(data?.error ?? `Error ${res.status}`);
+      }
+      router.push("/");
+      router.refresh();
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Error desconocido");
+      setSubmitting(false);
+    }
+  };
 
   return (
     <div className="mx-auto max-w-2xl space-y-6">
@@ -42,6 +57,15 @@ export default function AddBottlePage() {
           Rellena los datos de la botella que quieres guardar en la bodega.
         </p>
       </header>
+
+      {error && (
+        <div
+          role="alert"
+          className="rounded-lg border border-wine-300/40 bg-wine-300/10 px-4 py-3 text-sm text-wine-100"
+        >
+          No se pudo guardar la botella: {error}
+        </div>
+      )}
 
       <form
         onSubmit={handleSubmit}
@@ -105,8 +129,8 @@ export default function AddBottlePage() {
           <a href="/" className="btn-ghost">
             Cancelar
           </a>
-          <button type="submit" className="btn-primary">
-            Guardar botella
+          <button type="submit" className="btn-primary" disabled={submitting}>
+            {submitting ? "Guardando…" : "Guardar botella"}
           </button>
         </div>
       </form>
